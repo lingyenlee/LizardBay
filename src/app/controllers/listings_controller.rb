@@ -77,7 +77,7 @@ class ListingsController < ApplicationController
         # give permissions for the params values enter
         def listing_params
             params.require(:listing).permit(:title, :description, :age, :breed_id, :sex, 
-                :diet, :deposit, :price, :city, :state, :user_id)
+                :diet, :deposit, :price, :city, :state, :picture)
         end
 
         # find selected id

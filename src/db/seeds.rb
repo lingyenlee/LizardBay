@@ -14,16 +14,6 @@ lizards.each do |lizard|
     puts "#{lizard} created."
 end
 
-for i in 1..5
-    User.create(
-        username: Faker::Name.unique.first_name,
-        email: Faker::Name.unique.first_name + "@gmail.com",
-        password: Faker::Alphanumeric.alphanumeric(number: 6)
-    )
-    puts "User #{i} created."
-end
-
-
 for i in 1..15
     Listing.create(
         title: Faker::Lorem.sentence(word_count: 3),
@@ -35,8 +25,7 @@ for i in 1..15
         deposit: 10,
         city: Faker::Address.city,
         state: Faker::Address.state,
-        breed_id: [*1..11].sample,
-        user_id: [*1..5].sample
+        breed_id: [*1..11].sample
     )
     # l.picture.attach(io: File.open(image_data),
     # l.picture.attach(io: File.open("storage/Jw/5c/Jw5cW7megtWJdUy4W1qvyQEE"),

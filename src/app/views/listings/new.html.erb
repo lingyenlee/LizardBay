@@ -9,10 +9,6 @@
     <div>
       <%= form_with(model: @listing, local: true) do |f| %>
         <div>
-          <%= f.label :user_id %>
-          <%= f.text_field :user_id %>
-        </div>
-        <div>
           <%= f.label :title %>
           <%= f.text_field :title %>
         </div>
@@ -53,6 +49,15 @@
         <div>
           <%= f.label :state %>
           <%= f.text_field :state %>
+        </div>
+        <div>
+          <%= f.label :picture %>
+          <%= f.file_field :picture, accept:
+          'image/png, image/gif, image/jpeg, image/jpg' 
+          %>
+          <% if @listing.errors.any? %>
+            Not successful, please upload again.
+          <% end %>
         </div>
         <div>
           <%= f.submit%>

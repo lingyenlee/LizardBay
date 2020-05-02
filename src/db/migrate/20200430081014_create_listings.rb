@@ -10,8 +10,8 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.string :state
       t.integer :sex
       t.text :diet
-      t.references :breed_id, foreign_key: true
-      t.references :user_id, foreign_key: true
+      t.references :breed, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

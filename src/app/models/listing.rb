@@ -1,4 +1,12 @@
 class Listing < ApplicationRecord
-  belongs_to :breed_id
-  belongs_to :user_id
+  # a listing belongs to a breed
+  belongs_to :breed
+
+  # a listing belongs to a user
+  belongs_to :user
+
+
+  # enumerate female as 0, male as 1
+  enum sex: {female: 0, male: 1}
+  
 end

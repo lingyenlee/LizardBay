@@ -1,0 +1,52 @@
+<div>
+  << <%= link_to("back to all listings", listings_path)%>
+</div>
+    <div>
+      <%= form_with(model: @listing, local: true) do |f| %>
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div>
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+        </div>
+        <div>
+          <%= f.label :age %>
+          <%= f.text_field :age %>
+        </div>
+        <div>
+          <%= f.label :breed_id %>
+          <%= f.select(:breed_id, @breeds.map { |b|[ b.name, b.id]}) %>
+        </div>
+        <div>
+          <% @sexes.each do |option| %>
+            <%= f.radio_button(:sex, option)%>
+            <%= f.label(option)%>
+          <% end %>
+        </div>
+        <div>
+          <%= f.label :diet %>
+          <%= f.text_field :diet %>
+        </div>
+        <div>
+          <%= f.label :price %>
+          <%= f.text_field :price %>
+        </div>
+        <div>
+          <%= f.label :deposit %>
+          <%= f.text_field :deposit %>
+        </div>
+        <div>
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+        </div>
+        <div>
+          <%= f.label :state %>
+          <%= f.text_field :state %>
+        </div>
+        <div>
+          <%= f.submit%>
+        </div>
+      <% end %>
+    </div>

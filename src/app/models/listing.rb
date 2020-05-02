@@ -8,5 +8,9 @@ class Listing < ApplicationRecord
 
   # enumerate female as 0, male as 1
   enum sex: {female: 0, male: 1}
-  
+
+
+  # sort by id no, asc
+  scope :sorted_id, lambda {order(:id => :desc)} 
+
 end

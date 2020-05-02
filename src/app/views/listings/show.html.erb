@@ -1,0 +1,46 @@
+  <%# create the button for user to make payment %>
+<%# by creating a link to stripe %>
+<div>
+  <<< <%= link_to 'Back', listings_path %> 
+</div>
+    <div>
+      <h2>Lizard details</h2>
+      <table>
+        <tr>
+          <th>Title</th>
+          <td><%= @listing.title %></td>
+        </tr>
+        <tr>
+          <th>Breed</th>
+          <td><%= @listing.breed.name %></td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td><%= @listing.description %></td>
+        </tr>
+        <tr>
+          <th>Sex</th>
+          <td><%= @listing.sex %></td>
+        </tr>
+        <tr>
+          <th>Diet</th>
+          <td><%= @listing.diet %></td>
+        </tr>
+        <tr>
+          <th>Date of birth</th>
+          <td><%= @listing.age %></td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td>$<%= @listing.price %></td>
+        </tr>
+        <tr>
+          <th>Deposit required</th>
+          <td><%= @listing.deposit %> %</td>
+        </tr>
+      </table>
+      <br/>
+      <button data-stripe="payment">
+        Pay Deposit
+      </button>
+    </div>

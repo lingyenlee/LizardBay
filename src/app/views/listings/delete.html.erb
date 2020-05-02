@@ -1,0 +1,11 @@
+<%= link_to("<<< back to all listings", listings_path)%>
+<div class="listing delete">
+  <h2>Delete Listing</h2>
+  <%= form_with model: @listing, :method => "delete" do |f| %>
+    <p>Are you sure you want to delete this listing?</p>
+    <p class="reference-name"><%= f.object.title %></p>
+    <div class="form-buttons">
+      <%= f.submit("Delete listing") %>
+    </div>
+  <% end %>
+</div>

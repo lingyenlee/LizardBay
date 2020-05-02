@@ -11,6 +11,6 @@ class Listing < ApplicationRecord
 
 
   # sort by id no, asc
-  scope :sorted_id, lambda {order(:id => :desc)} 
+  scope :sorted_id, lambda {order(:id => :asc)} 
 
 end

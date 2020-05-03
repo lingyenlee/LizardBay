@@ -69,3 +69,5 @@ gem "aws-sdk-s3", "~> 1.63"
 gem 'bootstrap', '~> 4.4.1'
 
 gem 'jquery-rails'
+
+gem "font-awesome-rails", "~> 4.7"

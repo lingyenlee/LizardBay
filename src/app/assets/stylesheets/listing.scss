@@ -1,0 +1,27 @@
+/* Structure */
+#content {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.lizard img {
+    width: 16rem;
+}
+
+.card {
+    width: 16rem;
+    margin: 0.5rem;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+}

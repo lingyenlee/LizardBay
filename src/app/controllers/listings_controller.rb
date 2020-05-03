@@ -1,7 +1,10 @@
 class ListingsController < ApplicationController
+    layout "listing"
 
     # use before action filter to run set_listing method before other controller methods
     before_action :set_listing, only: [:show, :edit, :update, :delete]
+
+   
 
     def index
         # show all listings

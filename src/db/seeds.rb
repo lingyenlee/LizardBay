@@ -15,7 +15,7 @@ lizards.each do |lizard|
 end
 
 for i in 1..15
-    Listing.create(
+    l = Listing.create(
         title: Faker::Lorem.sentence(word_count: 3),
         description: Faker::Lorem.paragraph,
         age: [*1..5].sample,
@@ -30,8 +30,8 @@ for i in 1..15
     # l.picture.attach(io: File.open(image_data),
     # l.picture.attach(io: File.open("storage/Jw/5c/Jw5cW7megtWJdUy4W1qvyQEE"),
     # filename: "file.png", content_type: "image/png")
-    # l.picture.attach(io: File.open(Rails.root.join("app/assets/images/hero.png")), 
-    # filename: "hero.png", content_type: "image/png")
+     l.picture.attach(io: File.open(Rails.root.join("app/assets/images/home_lizard.jpg")), 
+     filename: "home_lizard.jpg", content_type: "image/jpg")
 
     puts "Listing #{i} created."
 end

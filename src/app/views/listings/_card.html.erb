@@ -1,19 +1,19 @@
  <% @listings.each do |listing| %>
   <div class="card">
-    <div class="lizard card-img-top">
+    <div class="listing-lizard card-img-top">
       <%= image_tag listing.picture if listing.picture.attached? %>
     </div>
     <div class="card-body">
       <h5 class="card-title"><%= listing.title %></h5>
       <p class="card-text">Breed: <%= listing.breed.name %></p>
-      <p><%= listing.age %> years old
-        <%= fa_icon listing.male? ? "mars" : "venus" %>
-      </p>
-      <p class="card-text">Location: <%= listing.city %>, <%= listing.state %></p>
-      <p class="card-text">$ <%= listing.price %></p>
-      <button>  <%= link_to('Show', listing_path(listing)) %> </button>
-      <button>  <%= link_to('Edit', edit_listing_path(listing)) %> </button>
-      <button>  <%= link_to('Delete', delete_listing_path(listing)) %> </button>
-    </div>
+      <p> <%= listing.age.to_i == 1 ? "#{listing.age} year old" : "#{listing.age} years old" %> </p>
+      <%= fa_icon listing.male? ? "mars" : "venus" %>
+    </p>
+    <p class="card-text">Location: <%= listing.city %>, <%= listing.state %></p>
+    <p class="card-text">$ <%= listing.price %></p>
+    <button>  <%= link_to('Show', listing_path(listing)) %> </button>
+    <button>  <%= link_to('Edit', edit_listing_path(listing)) %> </button>
+    <button>  <%= link_to('Delete', delete_listing_path(listing)) %> </button>
   </div>
+</div>
 <% end %>

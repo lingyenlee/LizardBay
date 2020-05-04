@@ -1,5 +1,9 @@
 {
-  "name": "LizardBay",
+  "name": "lizardbay",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "popper.js": "^1.12.9",
+    "jquery": "^3.3.0"
+  }
 }

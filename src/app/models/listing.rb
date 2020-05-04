@@ -14,4 +14,7 @@ class Listing < ApplicationRecord
   # sort by id no, asc
   scope :sorted_id, lambda {order(:id => :asc)} 
 
+  scope :price_low_first, lambda{order(:price => :asc )}
+
+  scope :price_high_first, lambda{order(:price => :desc )} 
 end

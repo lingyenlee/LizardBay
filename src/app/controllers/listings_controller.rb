@@ -8,7 +8,13 @@ class ListingsController < ApplicationController
 
     def index
         # show all listings
-        @listings = Listing.all.sorted_id
+        @listings = Listing.all
+        # @listings = Listing.all(params[:orderBy])
+        # @listings = @Listing.all.price_low_first
+    end
+
+    def sort
+        
     end
 
     def show

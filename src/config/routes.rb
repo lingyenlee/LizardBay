@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   
   resources :listings do
     member do
-      get "delete"
+      get "delete" # delete_listing /listing/:id/delete
     end
   end
 
+  # GET /listings?sort=price => listing sorted by price
 
 end

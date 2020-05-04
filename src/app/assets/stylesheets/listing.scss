@@ -9,7 +9,7 @@
     }
 }
 
-.lizard img {
+.listing-lizard img {
     width: 16rem;
 }
 
@@ -24,4 +24,21 @@
     flex-wrap: wrap;
     margin: 0;
     width: 100%;
+}
+
+.show-lizard img {
+    width: 20rem;
+}
+
+.show-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .details {
+        margin-left: 1rem;
+
+        .title {
+            text-align: center;
+        }
+    }
 }

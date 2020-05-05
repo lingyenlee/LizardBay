@@ -1,20 +1,14 @@
 <h2>Lizard listings</h2>
-<%= form_tag({:action => 'index'}) do %>
-  <%= radio_button_tag(:price, "price_low_first")%>
-  <%= label_tag(:price_low, "Price low to high")%>
-  <%= radio_button_tag(:price, "price_high_first")%>
-  <%= label_tag(:price_high, "Price high to low")%>
-  <%= submit_tag 'Sort'%>
-<% end %>
 <%# <%= link_to 'Sort', :action => "sort", :submit => 'radio_buttons'%>
-<button><%= link_to("Add new", new_listing_path) %></button>
-<div class="listing-wrapper">
-  <div class="refine-wrapper">
+<div>
+  <button><%= link_to("Add new", new_listing_path) %></button>
+</div>
+<div class="listing-container">
+  <div class="result-wrapper">
+    <p>Refine Results</p>
+    <%= render "filter", listings: @listings %>
   </div>
   <div class="cards-wrapper">
     <%= render "card",  listings: @listings %>
-    <%# <% @listings.each do |listing| %>
-      <%# <% render partial: "card", locals: {listings: listing}%>
-      <%# <% end %>
-    </div>
   </div>
+</div>

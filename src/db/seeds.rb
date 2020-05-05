@@ -14,7 +14,7 @@ lizards.each do |lizard|
     puts "#{lizard} created."
 end
 
-for i in 1..15
+for i in 1..5
     l = Listing.create(
         title: Faker::Lorem.sentence(word_count: 3),
         description: Faker::Lorem.paragraph,

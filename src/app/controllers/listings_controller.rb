@@ -3,19 +3,41 @@ class ListingsController < ApplicationController
 
     # use before action filter to run set_listing method before other controller methods
     before_action :set_listing, only: [:show, :edit, :update, :delete]
-
-   
-
     def index
-        # show all listings
-        @listings = Listing.all
-        # @listings = Listing.all(params[:orderBy])
-        # @listings = @Listing.all.price_low_first
-    end
+        #set what to show condition
+        #if there is no params, 
+            #=> show all listings
+            set_breed_sex
+            @listings = Listing.all
+                
+            if params["sex"]
+            @listings = Listing.where(sex: params["sex"])
+            # puts @listings
+            end
 
-    def sort
-        
+            if params["price"]
+
+            end
     end
+                
+               
+        #if there is params, 
+            #if params.has_key?(:key_name)
+            #=> show the filtered inputs
+            # @listings = Listing.all(params[:orderBy])
+
+            # if params[:one].present?
+            #     #do something...
+            #   elsif params[:two].present?
+            #     #do something else...
+            #   elsif params[:three].present?
+            #     #do something extraordinary...
+            # end
+
+        #required = [:key1, :key2, :key3]
+        #if required.all? {|k| params.has_key? k}
+        #else
+        #end
 
     def show
         # show listing with id selected

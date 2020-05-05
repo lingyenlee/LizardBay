@@ -1,0 +1,38 @@
+<%= form_with local: true, method: "get"  do |f| %>
+  <div class="price">
+    <p>Price Range</p>
+    <p>  <%= f.text_field :price, class: "min_price" %> to <%= f.text_field :price, class: "max_price" %> </p>
+    <%# first parameter is the params pass to controller %>
+  </div>
+  <div class="sex">
+    <p>Sex</p>
+    <% @sexes.each do |option| %>
+      <%= f.radio_button :sex, option %>
+      <%= f.label option %>
+    <%end%>
+  </div>
+  <div class="breed">
+    <p>Breed</p>
+    <ul>
+      <% @breeds.each do |b|%>
+        <li>
+          <%= f.check_box(b) %>
+          <%= f.label(b.name) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= f.submit 'Filter'%>
+  <%= f.submit 'Clear' %>
+<% end %>
+<%# <%= form_with local: true, method: "get" do |form| %>
+  <%# <% @sexes.each do |option| %> %>
+    <%# <div>
+                <%= form.radio_button :sex, option %>
+    <%# <%= form.label "sex_#{option}".to_sym, option %>
+    <%# <div> %>
+    <%# <% end %>
+    <%# <div> %>
+    <%# <%= form.submit %>
+    <%# </div> %>
+    <%# <% end %>
